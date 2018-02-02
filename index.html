@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Payments UI</title>
+    <link rel="stylesheet" href="_files/css/bootstrap.css">
+    <link rel="stylesheet" href="_files/css/style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row payment_ui_row">
+            
+            <div class="col-12 payment_methods_heading">
+                Payment Methods
+            </div>
+
+            <div id="ui_lhs" class="col-12 col-sm-4 col-lg-3 col-xl-2">
+                <div class="payment_methods"><i class="far fa-credit-card fa-fw"></i> Credit Card <div class="arrow-right"></div></div>
+                <div class="payment_methods"><i class="fab fa-paypal fa-fw"></i> Paypal</div>
+                <div class="payment_methods"><i class="fab fa-google fa-fw"></i> Google Pay</div>
+                <div class="payment_methods"><i class="fab fa-apple fa-fw"></i> Apple Pay</div>
+                <div class="payment_methods"><img class="icon" src="_files/images/venmo.png" alt=""> Venmo</div>
+                <div class="payment_methods"><i class="fab fa-cc-visa"></i> Visa Checkout</div>
+                <div class="payment_methods"><i class="fab fa-cc-mastercard"></i> Masterpass</div>
+            </div>
+
+            <div id="ui_rhs" class="col-12 col-sm-8 col-lg-9 col-xl-10 animated fadeIn">
+                <div class="cc_div_container col-12 col-sm-10 col-md-8 col-lg-7 col-xl-5">
+                    <div class="cc_div_top">
+
+                    </div>
+                    <div class="cc_div">
+                        <div class="card_input_div">
+                            <p>Card Number</p>
+                            <input class="card_input"  type="text">
+                            <span class="card_image"></span>
+                        </div>
+                        <div class="card_input_div">
+                            <p>Name on card</p>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <div class="col-6 card_input_div">
+                                <p>Valid upto</p>
+                                <input class="valid_upto_input" type="text" placeholder="MM">
+                                <input class="valid_upto_input" type="text" placeholder="YY">
+                            </div>
+                            <div class="col-6 card_input_div">
+                                <p>CVV</p>
+                                <input class="cvv_input" type="password" maxlength="4">
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <button class="confirm_payment_button">Confirm Payment</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+</html>
