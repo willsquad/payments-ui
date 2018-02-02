@@ -146,6 +146,25 @@ body {
     .cc_div_top {
         background: #fff;
         height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+
+        .card_amount_div {
+            font-family: "open sans";
+            padding: 30px;
+            p{
+                color: #333;
+                font-family: "open sans";
+                margin-bottom: 5px;
+                font-size: 11px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            h3 {
+                font-size: 20px;
+            }
+        }
     }
     .cc_div{
         background-color: #fff;
