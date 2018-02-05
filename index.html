@@ -17,37 +17,94 @@
 
     <div class="container-fluid">
         <div class="row payment_ui_row">
-            
+
             <div class="col-12 payment_methods_heading">
                 Payment Methods
             </div>
 
-            <div id="ui_lhs" class="col-12 col-sm-4 col-lg-3 col-xl-2">
-                <div class="payment_methods"><i class="far fa-credit-card fa-fw"></i> Credit Card <div class="arrow-right"></div></div>
-                <div class="payment_methods"><i class="fab fa-paypal fa-fw"></i> Paypal</div>
-                <div class="payment_methods"><i class="fab fa-google fa-fw"></i> Google Pay</div>
-                <div class="payment_methods"><i class="fab fa-apple fa-fw"></i> Apple Pay</div>
-                <div class="payment_methods"><img class="icon" src="_files/images/venmo.png" alt=""> Venmo</div>
-                <div class="payment_methods"><i class="fab fa-cc-visa"></i> Visa Checkout</div>
-                <div class="payment_methods"><i class="fab fa-cc-mastercard"></i> Masterpass</div>
+            <div id="ui_lhs" class="col-12 col-sm-4 col-lg-3 col-xl-2 hidden-xs-down">
+                <div class="payment_methods" data-id="cards">
+                    <i class="far fa-credit-card fa-fw"></i> Credit Card
+                    <div class="arrow-right active"></div>
+                </div>
+                <div class="payment_methods" data-id="paypal">
+                    <i class="fab fa-paypal fa-fw"></i> Paypal
+                    <div class="arrow-right"></div>
+                </div>
+                <div class="payment_methods" data-id="google_pay">
+                    <i class="fab fa-google fa-fw"></i> Google Pay
+                    <div class="arrow-right"></div>
+                </div>
+                <div class="payment_methods" data-id="apple_pay">
+                    <i class="fab fa-apple fa-fw"></i> Apple Pay
+                    <div class="arrow-right"></div>
+                </div>
+                <div class="payment_methods" data-id="venmo">
+                    <img class="icon" src="_files/images/venmo.png" alt=""> Venmo
+                    <div class="arrow-right"></div>
+                </div>
+                <div class="payment_methods" data-id="visa_checkout">
+                    <i class="fab fa-cc-visa"></i> Visa Checkout
+                    <div class="arrow-right"></div>
+                </div>
+                <div class="payment_methods" data-id="masterpass">
+                    <i class="fab fa-cc-mastercard"></i> Masterpass
+                    <div class="arrow-right"></div>
+                </div>
+            </div>
+
+            <div id="ui_lhs_xs_container" class="col-12 col-sm-4 col-lg-3 col-xl-2 hidden-sm-up">
+                <div class="overflow_wrap">
+                        <div id="ui_lhs_xs" class="col-12">
+                                <div class="payment_methods_xs" data-id="cards">
+                                    <i class="far fa-credit-card fa-fw"></i> Card
+                                    <div class="arrow-down active"></div>
+                                </div>
+                                <div class="payment_methods_xs" data-id="paypal">
+                                    <i class="fab fa-paypal fa-fw"></i> Paypal
+                                    <div class="arrow-down"></div>
+                                </div>
+                                <div class="payment_methods_xs" data-id="google_pay">
+                                    <i class="fab fa-google fa-fw"></i> Google Pay
+                                    <div class="arrow-down"></div>
+                                </div>
+                                <div class="payment_methods_xs" data-id="apple_pay">
+                                    <i class="fab fa-apple fa-fw"></i> Apple Pay
+                                    <div class="arrow-down"></div>
+                                </div>
+                                <div class="payment_methods_xs" data-id="venmo">
+                                    <img class="icon" src="_files/images/venmo.png" alt=""> Venmo
+                                    <div class="arrow-down"></div>
+                                </div>
+                                <div class="payment_methods_xs" data-id="visa_checkout">
+                                    <i class="fab fa-cc-visa"></i> Checkout
+                                    <div class="arrow-down"></div>
+                                </div>
+                                <div class="payment_methods_xs" data-id="masterpass">
+                                    <i class="fab fa-cc-mastercard"></i> Masterpass
+                                    <div class="arrow-down"></div>
+                                </div>
+                            </div>
+                </div>
+                
             </div>
 
             <div id="ui_rhs" class="col-12 col-sm-8 col-lg-9 col-xl-10 animated fadeIn">
-                <div class="cc_div_container col-12 col-sm-10 col-md-8 col-lg-7 col-xl-5">
+                <div id="cards" class="payment_method_div active cc_div_container col-12 col-sm-10 col-md-8 col-lg-7 col-xl-5">
                     <div class="cc_div_top">
-                            <div class="card_amount_div">
-                                    <p>Order id:</p>
-                                    <h3>#1234567890</h3>
-                            </div>
-                            <div class="card_amount_div">
-                                    <p>Total:</p>
-                                    <h3>$230</h3>
-                            </div>
+                        <div class="card_amount_div">
+                            <p>Order id:</p>
+                            <h3>#1234567890</h3>
+                        </div>
+                        <div class="card_amount_div">
+                            <p>Total:</p>
+                            <h3>$230</h3>
+                        </div>
                     </div>
                     <div class="cc_div">
                         <div class="card_input_div">
                             <p>Card Number</p>
-                            <input class="card_input"  type="text">
+                            <input class="card_input" type="text">
                             <span class="card_image"></span>
                         </div>
                         <div class="card_input_div">
@@ -55,12 +112,12 @@
                             <input type="text">
                         </div>
                         <div class="row">
-                            <div class="col-6 card_input_div">
+                            <div class="col-7 col-sm-7 col-lg-6 card_input_div">
                                 <p>Valid upto</p>
-                                <input class="valid_upto_input" type="text" placeholder="MM">
-                                <input class="valid_upto_input" type="text" placeholder="YY">
+                                <input class="valid_upto_input" type="number" placeholder="MM" pattern="[0-9]{2}" min="1" max="12" maxlength="2">
+                                <input class="valid_upto_input" type="number" placeholder="YY" pattern="[0-9]{2}" min="18" max="50" maxlength="2">
                             </div>
-                            <div class="col-6 card_input_div">
+                            <div class="col-5 col-sm-5 col-lg-6 card_input_div">
                                 <p>CVV</p>
                                 <input class="cvv_input" type="password" maxlength="4">
                             </div>
@@ -69,9 +126,35 @@
                         <div class="">
                             <button class="confirm_payment_button">Confirm Payment</button>
                         </div>
-                        
+
                     </div>
-                </div>
+                </div><!-- End of cards div  -->
+
+                <div id="paypal" class="payment_method_div">
+                    Paypal
+                </div><!-- End of paypal div  -->
+
+                <div id="google_pay" class="payment_method_div">
+                    Google Pay
+                </div><!-- End of Google Pay div  -->
+
+                <div id="apple_pay" class="payment_method_div">
+                    Apple Pay
+                </div><!-- End of Apple Pay div  -->
+
+                <div id="venmo" class="payment_method_div">
+                    Venmo
+                </div><!-- End of Venmo div  -->
+
+                <div id="visa_checkout" class="payment_method_div">
+                    Visa Checkout
+                </div><!-- End of Visa Checkout div  -->
+
+                <div id="masterpass" class="payment_method_div">
+                    Masterpass
+                </div><!-- End of Masterpass div  -->
+
+
             </div>
 
         </div>
@@ -80,5 +163,7 @@
 </body>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="_files/js/main.js"></script>
 
 </html>
